@@ -1,0 +1,102 @@
+openapi: 3.1.0
+info:
+  title: Customer Health & Churn API
+  version: 1.0.0
+  description: >
+    Recruiter-ready API for SaaS customer health scoring, churn-risk analysis,
+    renewal prioritization, and customer success playbook routing.
+servers:
+  - url: http://localhost:3000
+paths:
+  /health:
+    get:
+      summary: Service health status
+      responses:
+        '200':
+          description: Healthy service response
+  /api/customers:
+    get:
+      summary: List customers
+      responses:
+        '200':
+          description: Array of customer records
+  /api/customers/{id}:
+    get:
+      summary: Get one customer
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Customer record
+        '404':
+          description: Customer not found
+  /api/subscriptions:
+    get:
+      summary: List subscriptions
+      responses:
+        '200':
+          description: Array of subscription records
+  /api/usage:
+    get:
+      summary: List usage metrics
+      responses:
+        '200':
+          description: Array of usage metric records
+  /api/renewals:
+    get:
+      summary: List renewals
+      responses:
+        '200':
+          description: Array of renewal records
+  /api/playbooks:
+    get:
+      summary: List success playbooks
+      responses:
+        '200':
+          description: Array of playbook records
+  /api/dashboard/summary:
+    get:
+      summary: Dashboard summary view
+      responses:
+        '200':
+          description: Aggregate customer health summary
+  /api/analyze/health:
+    post:
+      summary: Analyze customer health
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Health analysis result
+  /api/analyze/churn:
+    post:
+      summary: Analyze churn risk
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Churn analysis result
+  /api/analyze/playbook:
+    post:
+      summary: Recommend a success playbook
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Playbook recommendation result
