@@ -6,7 +6,7 @@ In this case the pressure showed up around patient handoff delays, callback gaps
 
 That was the opening for **customer-health-churn-api**. The repo was designed around a simple idea: operators need more than visibility. They need evidence, priorities, and next actions that make sense under pressure. That is why the project is framed as healthcare operations rather than as a generic app demo. The point is not just to show that data can be rendered or APIs can be wired together. The point is to show what a practical control surface looks like when the audience is care coordination and health-system operations teams.
 
-Existing tools missed the mark for understandable reasons. The available tooling landscape â€” EHRs, outreach systems, and generic workflow tools â€” helped with record-keeping, scanning, reporting, or workflow coverage. What it still missed was a command layer that could turn pathway friction into clear ownership, urgency, and next-best action. In other words, the gap was not capability in isolation. The gap was operational coherence. The team responsible for day-to-day decisions still had to reconstruct the story manually.
+The surrounding toolchain was never useless. EHRs, outreach systems, and generic workflow tools handled adjacent parts of the job reasonably well. The problem was that they still left out a command layer that could turn pathway friction into clear ownership, urgency, and next-best action. That left operators stitching together evidence by hand right when the environment was least forgiving.
 
 That shaped the design philosophy from the start:
 
